@@ -32,8 +32,14 @@ body {
     /* background: rgb(238,174,202);
     background: radial-gradient(circle, rgb(253, 130, 15) 0%,
     rgb(255, 243, 76) 100%); */
-    background-image: url(/Personal\ site\ mood\ board/4.jpg);
+    
     background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    transition: background-image 1s ease;
+
+    z-index: -200;
 }
 
 .main-sec {
@@ -50,11 +56,14 @@ body {
         "d d d d";
     align-items: center;
 
-    background: rgba(255, 255, 255, 0.10);
-    backdrop-filter: blur(5px);
-    border-radius: 20px;
-    border: 1px solid rgba(255, 255, 255, 0.18);
+    backdrop-filter: var(--backdrop-filter);
+    -webkit-backdrop-filter: var(--webkit-backdrop-filter);
+    background-color: var(--background-color);
+    border-radius: var(--border-radius);
+    border: var(--border);
     padding: 20px;
+
+    transition: background-color 1s ease;
 }
 
 .main-sec:before {
@@ -97,34 +106,15 @@ body {
     padding: 20px;
 }
 
-.contact-btn {
-    grid-area: d;
-    background: #eb2438;
-    margin: 5px;
-    padding: 10px;
-    text-align: center;
-    justify-self: center;
-    max-width: 150px;
-    text-decoration: none;
-    color: #FFFFFC;
-    border-radius: 2em;
-    /* box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.432); */
-    transition: 400ms ease-in-out;
-}
-
-.contact-btn:hover {
-    transform: scale(1.1);
-}
-
 .blob {
     position:fixed;
     left: 0px;
     top: -200px;
-    height: 50vw;
-    width: 50vw;
-    max-height: 700px;
-    max-width: 700px;
-    animation: floatBlob 60s linear infinite alternate;
+    height: 100vw;
+    width: 100vw;
+    max-height: 1200px;
+    max-width: 1200px;
+    animation: floatBlob 120s linear infinite alternate;
     z-index: -2;
 }
 
@@ -184,22 +174,25 @@ body {
 }
 
 .basic-grid {
-    max-width: 1100px;
+    max-width: 1600px;
     display: grid;
     gap: 2rem;
-    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(325px, 1fr));
 
-    background: rgba(255, 255, 255, 0.10);
-    backdrop-filter: blur(5px);
-    border-radius: 20px;
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    padding: 20px;
+    backdrop-filter: var(--backdrop-filter);
+    -webkit-backdrop-filter: var(--webkit-backdrop-filter);
+    background-color: var(--background-color);
+    border-radius: var(--border-radius);
+    border: var(--border);
+    padding: 3rem;
+
+    transition: background-color 1s ease;
 }
 
 .pr-img {
     background-size: contain;
     background-repeat: no-repeat;
-    max-width: 500px;
+    max-width: 325px;
     border-radius: 1rem;
     transition: all 0.2s ease-in-out;
 }
@@ -208,10 +201,60 @@ body {
     transform:scale(0.95);
 }
 
+.theme-swt {
+    position: fixed;
+    right: 4px;
+    bottom: 4px;
+    backdrop-filter: var(--backdrop-filter);
+    -webkit-backdrop-filter: var(--webkit-backdrop-filter);
+    background-color: var(--background-color);
+    border-radius: var(--border-radius);
+    border: var(--border);
+    margin: 5px;
+}
+
+.switch input {
+    display: none;
+}
+
+.switch .slider {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.switch .slider:before {
+    content: '';
+    position: absolute;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    top: 4px;
+    left: 4px;
+    background-color: #ffbd08;
+    transition: transform 0.8s ease;
+}
+
+.switch input:checked + .slider:before {
+    transform: translateX(26px);
+    transition: transform 1s ease;
+}
+
+#sun-image,
+#moon-image {
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    width: 26px;
+    height: 26px;
+}
+
 /* Add this @media rule for mobile screens */
 @media screen and (max-width: 1099.9px){
     .basic-grid {
         grid-template-columns: 1fr;
+        padding: 20px;
     }
 }
 
