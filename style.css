@@ -248,6 +248,7 @@ body {
     left: 4px;
     width: 26px;
     height: 26px;
+    cursor: pointer;
 }
 
 /* Add this @media rule for mobile screens */
