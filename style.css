@@ -177,28 +177,30 @@ body {
     max-width: 1600px;
     display: grid;
     gap: 2rem;
-    grid-template-columns: repeat(auto-fit, minmax(325px, 1fr));
-
+    grid-template-columns: repeat(auto-fit, minmax(700px, 1fr));
+    font-size: 0;
     backdrop-filter: var(--backdrop-filter);
     -webkit-backdrop-filter: var(--webkit-backdrop-filter);
     background-color: var(--background-color);
     border-radius: var(--border-radius);
     border: var(--border);
-    padding: 3rem;
+    padding: 2rem;
 
     transition: background-color 1s ease;
 }
 
 .pr-img {
-    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat;
-    max-width: 325px;
+    max-width: 700px;
     border-radius: 1rem;
     transition: all 0.2s ease-in-out;
 }
 
 .pr-img:hover {
     transform:scale(0.95);
+    filter: saturate(2);
+    box-shadow: 5px 5px 15px #0000008a;
 }
 
 .theme-swt {
@@ -256,6 +258,9 @@ body {
     .basic-grid {
         grid-template-columns: 1fr;
         padding: 20px;
+    }
+    .pr-img {
+        max-width: 700px;
     }
 }
 
