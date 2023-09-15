@@ -135,11 +135,14 @@ body {
 0% {
 border-color: rgb(255, 0, 191);
 }
-50% {
+33% {
 border-color:rgb(153, 12, 235);
 }
+66% {
+border-color:rgb(255, 79, 246);
+}
 100% {
-border-color:rgb(255, 255, 255);
+border-color: rgb(255, 0, 191);
 }
 }
 
